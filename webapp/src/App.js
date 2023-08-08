@@ -16,7 +16,7 @@ function App() {
     setIsLoading(true);
     setGeneratedTweet(null);
     // Send the tweet idea to the server to generate a tweet
-    axios.post('http://localhost:8080/generate-banger', {originalText: tweetIdea})
+    axios.post('http://localhost:8080/generate-example-because-ihavenocredits', {originalText: tweetIdea})
     .then(response => {
       if (response.status !== 200) {
         throw new Error(`Request failed with status code ${response.status}`);

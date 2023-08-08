@@ -45,6 +45,18 @@ class MyServer(BaseHTTPRequestHandler):
             self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
             self.wfile.write(bytes(banger_tweet, "utf-8"))
+        elif (url == "/generate-example-because-ihavenocredits"): 
+            #generate example banger without calling the API, add artifical delay of 2 seconds
+            import time
+            time.sleep(2)
+            banger_tweet = "I'm a banger because I'm a banger."
+            self.send_response(200)
+            self.send_header("Content-type", "text/html")
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(bytes(banger_tweet, "utf-8"))
+            
+            
         else:
             self.send_response(404)
             self.send_header("Content-type", "text/html")
